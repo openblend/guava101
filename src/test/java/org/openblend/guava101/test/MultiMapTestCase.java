@@ -1,6 +1,7 @@
 package org.openblend.guava101.test;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -25,7 +26,7 @@ import static org.openblend.guava101.support.Constants.VRHNIKA;
 public class MultiMapTestCase {
     @Test
     public void testBefore() throws Exception {
-        Map<String, Collection<Person>> map = new HashMap<String, Collection<Person>>();
+        Map<String, Collection<Person>> map = Collections.synchronizedMap(new HashMap<String, Collection<Person>>());
         put(map, VRHNIKA, ALES);
         put(map, LJUBLJANA, ANDY);
         put(map, VRHNIKA, ELA);
